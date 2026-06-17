@@ -105,9 +105,20 @@ fun SettingsScreen() {
     Column(
         Modifier
             .fillMaxSize()
-            .padding(24.dp), Arrangement.spacedBy(16.dp)
+            .padding(24.dp),
+
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        Text("Settings Screen", style = MaterialTheme.typography.headlineMedium)
-        Text("This is where you can add toggles or preferences.")
+
+        Text(
+            "Settings",
+            style = MaterialTheme.typography.headlineMedium
+        )
+
+        Text("Temperature Unit")
+
+        Text("• Celsius (°C)")
+
+        Text("• Fahrenheit (°F)")
     }
 }
