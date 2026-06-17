@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -21,7 +20,6 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -83,20 +81,39 @@ fun UtilityApp() {
 
 @Composable
 fun UtilityScreen() {
-    var counter by remember { mutableIntStateOf(0) }
 
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(24.dp),
+
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        Text("Utility Screen", style = MaterialTheme.typography.headlineMedium)
-        Text("Counter: $counter", style = MaterialTheme.typography.bodyLarge)
 
-        Button(onClick = { counter++ }) {
-            Text("Increment")
-        }
+        Text(
+            text = "Today's Weather",
+            style = MaterialTheme.typography.headlineMedium
+        )
+
+        Text(
+            text = "🌤 Sunny",
+            style = MaterialTheme.typography.headlineSmall
+        )
+
+        Text(
+            text = "Temperature: 31°C",
+            style = MaterialTheme.typography.bodyLarge
+        )
+
+        Text(
+            text = "Humidity: 80%",
+            style = MaterialTheme.typography.bodyLarge
+        )
+
+        Text(
+            text = "Wind Speed: 12 km/h",
+            style = MaterialTheme.typography.bodyLarge
+        )
     }
 }
 
