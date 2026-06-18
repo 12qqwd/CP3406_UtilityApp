@@ -1,55 +1,107 @@
-# Utility App Starter – CP3406 / CP5307
+# Weather Utility App – CP3406 / CP5307
 
-This is a basic Android app template for **Assessment 1: Utility App** in CP3406/CP5603..  
-It provides the structure for a simple tabular UI using **Jetpack Compose** and **Material Design 3**.
+This is a simple Android weather utility application developed for Assessment 1 of CP3406 / CP5307.
+
+The app provides users with quick, at-a-glance weather information including:
+
+* Current temperature
+* Humidity
+* Wind speed
+
+Weather data is retrieved from the Open-Meteo API using Retrofit.
 
 ---
 
 ## Getting Started
 
 ### How to Run
-1. Clone or download this repo  
-2. Open in Android Studio  
-3. Run on an emulator or physical device (API 26+ recommended)  
+
+1. Clone or download this repository.
+2. Open the project in Android Studio.
+3. Run the application on an Android emulator or physical device (API 24+).
 
 ---
 
-## Composables
+## App Features
 
-### UtilityApp()
-- Contains the screen layout using a Scaffold
-- Toggles content between Utility and Settings
+### Utility Screen
 
-### UtilityScreen()
-- Displays a simple counter (replace with your utility logic)  
-- Includes a button to increment the counter
+* Displays current weather information.
+* Shows:
 
-### SettingsScreen()
-- Placeholder for user preferences or configuration  
-- Can be extended to modify main screen behavior (e.g., theme, units, limits)  
+  * Temperature (°C)
+  * Humidity (%)
+  * Wind Speed (km/h)
+* Retrieves live data from Open-Meteo API.
 
----
+### Settings Screen
 
-## Key Concepts Covered
-
-| Week | Concept                        | Used In                          |
-|------|--------------------------------|----------------------------------|
-| 1    | Kotlin + Android Studio         | MainActivity.kt |
-| 2    | Jetpack Compose Layouts         | UtilityApp(), UtilityScreen(), SettingsScreen()   |
-| 3    | Material Design 3               | CP3406_CP5603UtilityAppStarterTemplateTheme, MaterialTheme.typography |
-| 4    | ViewModel | Not included in starter          |
-| 5    | Retrofit  | Not included in starter          |
+* Displays temperature unit options.
+* Provides a simple settings interface for future extension.
 
 ---
 
-## Suggested Extensions
-- Replace counter with a real utility (e.g., hydration tracker, timer)  
-- Add a ViewModel for state management  
-- Use SharedPreferences or DataStore to persist settings  
-- Add a simple API call using Retrofit (e.g., fetch weather or quotes)  
+## Architecture
+
+The application follows modern Android development practices:
+
+* Jetpack Compose for UI
+* Material Design 3
+* ViewModel for state management
+* Repository Pattern
+* Retrofit for network requests
+* Coroutines for asynchronous operations
 
 ---
 
-## 📚 License
-This template is provided for educational use in CP3406.  
-Feel free to modify and extend it for your assessment.
+## API Used
+
+Open-Meteo Weather API
+
+https://open-meteo.com/
+
+Endpoint:
+
+https://api.open-meteo.com/v1/forecast
+
+---
+
+## Project Structure
+
+MainActivity.kt
+
+* Main activity of the application.
+* Contains navigation between Utility and Settings screens.
+
+WeatherResponse.kt
+
+* Data classes for parsing weather API responses.
+
+WeatherApi.kt
+
+* Retrofit API interface.
+
+WeatherRepository.kt
+
+* Handles network communication.
+
+WeatherViewModel.kt
+
+* Stores UI state and retrieves weather data.
+
+---
+
+## Author
+
+Student Name: YOUR NAME
+
+Subject: CP3406 / CP5307
+
+Assessment: Assessment 1 – Utility App
+
+---
+
+## License
+
+This project was developed for educational purposes as part of CP3406 / CP5307 at James Cook University.
+
