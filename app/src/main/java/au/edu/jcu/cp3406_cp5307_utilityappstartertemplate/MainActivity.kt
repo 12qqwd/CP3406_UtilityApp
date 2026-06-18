@@ -23,6 +23,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -82,6 +83,8 @@ fun UtilityApp() {
 @Composable
 fun UtilityScreen() {
 
+    val viewModel: WeatherViewModel = viewModel()
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -96,22 +99,22 @@ fun UtilityScreen() {
         )
 
         Text(
-            text = "🌤 Sunny",
+            text = "🌤 Current Weather",
             style = MaterialTheme.typography.headlineSmall
         )
 
         Text(
-            text = "Temperature: 31°C",
+            text = "Temperature: ${viewModel.temperature.value} °C",
             style = MaterialTheme.typography.bodyLarge
         )
 
         Text(
-            text = "Humidity: 80%",
+            text = "Humidity: ${viewModel.humidity.value} %",
             style = MaterialTheme.typography.bodyLarge
         )
 
         Text(
-            text = "Wind Speed: 12 km/h",
+            text = "Wind Speed: ${viewModel.windSpeed.value} km/h",
             style = MaterialTheme.typography.bodyLarge
         )
     }
