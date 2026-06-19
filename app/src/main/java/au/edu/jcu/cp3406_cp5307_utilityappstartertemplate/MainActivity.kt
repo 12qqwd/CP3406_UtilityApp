@@ -142,3 +142,4 @@ fun SettingsScreen() {
         Text("• Fahrenheit (°F)")
     }
 }
+
