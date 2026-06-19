@@ -20,6 +20,7 @@ class WeatherViewModel : ViewModel() {
     }
 
 
+
     private fun loadWeather() {
 
         viewModelScope.launch {
