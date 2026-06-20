@@ -15,3 +15,4 @@ data class CurrentWeather(
     val wind_speed_10m: Double
 
 )
+
